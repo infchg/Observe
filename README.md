@@ -5,11 +5,12 @@
 
 ## VT API made easy with basic steps and examples
 
-Step1. Get your API key from virustotal.com
+  * Step1. Get your API key from virustotal.com
 
-Step2. save your key in the config file (vt init #optional) but at least save it in an environment variable:
+  * Step2. save your key in the config file (vt init #optional) but at least save it in an environment variable:
 
-Step3. use Curl 1 line to test the API with your key
+  * Step3. use Curl 1 line to test the API with your key
+
     curl -XPOST https://www.virustotal.com/vtapi/v2/file/scan --form "apikey=$apikey" --form "file=@README.md" -G 
 
 this should RETURN THE RESOURCE was QUEUED
