@@ -1,8 +1,10 @@
 
 #First get your API key and init
+# vt init might have saved your key in the config file (vt init #optional) 
+# otherwise at least save it in an environment variable:
 
 source ~/.vt.toml
- echo IF WORKING YOUR KEY IS: $apikey
+ echo IF ALREDY IN VT TOML YOUR KEY IS: $apikey
  
  
  #DEMOS api
