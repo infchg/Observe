@@ -1,7 +1,7 @@
 //dbverif.groovy
 
 import groovy.sql.Sql
-import net.sourceforge.jtds.jdbc.Driver  //#needs the jars
+import net.sourceforge.jtds.jdbc.Driver  // this needs the jars jtds 
 
 def env = System.getenv()
 def dbServer = env.'DB_Server'
