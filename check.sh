@@ -6,7 +6,7 @@ source ~/.vt.toml # to get the api key / see jupyter Virus integration !
  echo IF ALREDY IN VT TOML YOUR KEY IS: $apikey
  
  
- #DEMOS api
+ # DEMOS of this api to detect virus
  
  
 curl -XPOST https://www.virustotal.com/vtapi/v2/file/scan --form "apikey=$apikey" --form "file=@README.md" -G 
