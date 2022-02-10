@@ -6,6 +6,7 @@ from OpenTelemetry to SOAR  with Splunk ELK Grafana,
 
 Using Splunk Cloud, we grouped different event producers in different indexex, each with a differen HEC token:
 
+Examples of manual curl :
 
      curl -H 'X-Splunk-Request-Channel: faff6d61-897a-4843-b568-a9b8c8afd22b' -H 'Authorization: Splunk 70a392fa-4aeb-4782-867a-d10157af8d93' -d ' { "event": "bob" } '  https://prd-p-40ogy.splunkcloud.com:8088/services/collector -k
 
@@ -22,7 +23,26 @@ Using Splunk Cloud, we grouped different event producers in different indexex, e
      curl -H 'X-Splunk-Request-Channel: a9e7fbf4-9b0d-4c2a-a75a-31238a3eb2d3' -H 'Authorization: Splunk b60d8798-9179-49ba-99a8-9cf6114a80d4'  -d '{ "sourcetype": "curl", "event": "out, te=mk, relay=Minsk, points=ГЭ " }' https://prd-p-40ogy.splunkcloud.com:8088/services/collector -k
  
      {"text":"Success","code":0,"ackId":2}
-     
+
+
+## Send your Repository activity to Splunk Cloud
+
+you just need to add a similar job to your action:
+
+     jobs:
+       build:
+         runs-on: ubuntu-latest
+
+         steps:
+           - uses: actions/checkout@v2
+
+           - name: Run a OpenTelemetry to Splunk Cloud
+             run: |
+               echo Add other actions to build,
+               curl -H 'X-Splunk-Request-Channel: FE0ECFAD-13D5-401B-847D-77833BD77131' -H 'Authorization: Splunk 70a392fa-4aeb-4782-867a-d10157af8d93' -d '{ "sourcetype": "curl", "event": "github, gh=$GITHUB_WORKSPACE, relay=shigatse" }' https://prd-p-40ogy.splunkcloud.com:8088/services/collector -k
+               echo test, and deploy your project.
+          
+          
      
 ## Soar rule
 
