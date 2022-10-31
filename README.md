@@ -1,6 +1,7 @@
 # Observability 
 
-from OpenTelemetry to SOAR  with Splunk ELK Grafana,
+Observe or Meassure (M of Six-Sigma's DMAIC) from OpenTelemetry to SOAR  with Splunk ELK Grafana,
+
 
 ## Splunk
 
